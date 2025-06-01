@@ -2,22 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url(./fonts.css);
+
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #CAD2C5;
+  --foreground: #3B3B3B;
+  --primary:#E88D67;
+  --primary-opac:#E88D6788;
+  --secondary:#84A98C;
+  --secondary-opac:#84A98C88;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #3B3B3B;
+    --foreground: #CAD2C5;
+    --primary:#E88D67;
+    --primary-opac:#E88D6788;
+    --secondary:#84A98C;
+    --secondary-opac:#84A98C88;
   }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
 }
 
 @layer utilities {
