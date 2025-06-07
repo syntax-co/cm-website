@@ -7,7 +7,8 @@ export default function Home() {
 
 
   return (
-    <div className="w-full h-[92vh] 
+    <div className="w-full h-[92vh]
+    flex flex-col
     flex-1"
     >
       

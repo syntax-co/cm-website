@@ -5,9 +5,20 @@
 @import url(./fonts.css);
 
 
-:root {
+/* :root {
   --background: #CAD2C5;
   --foreground: #3B3B3B;
+  --primary:#E88D67;
+  --primary-opac:#E88D6788;
+  --secondary:#84A98C;
+  --secondary-opac:#84A98C88;
+} */
+
+:root {
+  --background: #222222;
+  --foreground: #2e2e2e;
+  --light: #CAD2C5;
+  --light-opac: #CAD2C588;
   --primary:#E88D67;
   --primary-opac:#E88D6788;
   --secondary:#84A98C;
@@ -26,7 +37,8 @@
 }
 
 body {
-  background-color: var(--background);
+  background:linear-gradient(-135deg,var(--background) 50%,var(--primary) 275%)
+  /* background-color: var(--background); */
 }
 
 @layer utilities {

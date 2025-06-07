@@ -4,7 +4,7 @@
 const Navbar = () => {
     return (
         <div className="w-full h-[8vh]
-        bg-primary 
+        bg-foreground border-b border-primary 
         px-16 flex items-center 
         "
         >

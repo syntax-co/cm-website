@@ -11,6 +11,8 @@ module.exports = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        light:'var(--light)',
+        lightOpac:'var(--light-opac)',
         primary:'var(--primary)',
         primaryOpac:'var(--primary-opac)',
         secondary:'var(--secondary)',

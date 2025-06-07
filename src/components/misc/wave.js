@@ -8,7 +8,7 @@ const Line = ({position,index}) => {
 
     return(
         <motion.div id={'line-'+index} 
-        className='w-2 bg-secondary rounded-md
+        className='w-2 bg-lightOpac rounded-md
         mx-auto mt-2'
 
         initial={{height:'10px'}}
