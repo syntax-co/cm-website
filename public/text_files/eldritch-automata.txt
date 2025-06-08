@@ -1,0 +1,4 @@
+Eldtritch Automata was a kickstarter RPG that was looking for
+a website redesign. I decided to take on the challenge on my own
+and test my skills. I used assets and color pallete from their original
+site that they had and made it to be responsive for mobile devices.

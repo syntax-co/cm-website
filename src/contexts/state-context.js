@@ -1,43 +1,43 @@
-import { createContext, useContext, useState } from 'react';
+import { useRouter } from 'next/router';
+import { createContext, useContext, useEffect, useState } from 'react';
+import projects from '@/json_files/projects.json'
+import technologies from '@/json_files/technologies.json'
 
 const StateContext = createContext();
 
 
-;
-
 export const StateProvider = ({ children }) => {
-
+    const router = useRouter();
+    const [currentPath, setCurrentPath] = useState(router.asPath);
     const [selectedTile,setSelectedTile] = useState('frontend')
+    const [selectedProject,setSelectedProject] = useState(Object.keys(projects)[0])
 
-    const technologies = {
-        frontend: [
-            "React.js",
-            "Next.js",
-            "Tailwind CSS",
-            "ShadCN UI",
-            "Framer Motion",
-            "React Three Fiber",
-            "Auth0 React SDK",
-            "Responsive CSS"
-        ],
-        backend: [
-            "FastAPI",
-            "Express.js",
-            "Python",
-            "OpenAI API",
-            "MongoDB",
-            "JWT / Bearer token auth",
-            "RBAC via Auth0",
-            "Auth0",
-            "Session-based authentication"
-        ]
-    }
+    
+    const handleRouteChange = (url) => {
+        setCurrentPath(url);
+        console.log('Updated path:', url); // optional logging
+    };
+
+    useEffect(() => {
+
+        router.events.on('routeChangeComplete', handleRouteChange);
+
+        // Clean up the event listener
+        return () => {
+            router.events.off('routeChangeComplete', handleRouteChange);
+        };
+    }, [router]);
+
 
     return (
         <StateContext.Provider value={{
         technologies,
+        projects,
         selectedTile,
-        setSelectedTile
+        currentPath,
+        selectedProject,
+        setSelectedTile,
+        setSelectedProject
         }}>
         {children}
         </StateContext.Provider>

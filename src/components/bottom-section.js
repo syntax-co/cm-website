@@ -16,6 +16,12 @@ const BottomSection = () => {
             <div className='w-fit  leading-[100%] 
             text-[170px] text-light
             font-display relative
+
+
+            sm:text-[170px]
+            md:text-[170px]
+            lg:text-[100px]
+            xl:text-[150px]
             '
             >
                 chris munoz

@@ -1,0 +1,6 @@
+Kepler.io is a neat idea of a wrapper library that easily handles 
+user/data-management. The examples of course are all use cases in which 
+such wrapper can be used. This idea may be applicable to help speed up 
+the process of setting up a user management system and allow developers 
+to focus more time on other parts of projects or just be able to finally 
+iron out the details.

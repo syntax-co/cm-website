@@ -1,0 +1,2 @@
+I provide Back-End services and API integrations for popular services such 
+as Google Maps, Spotify, Stripe and plenty of other well documented API’s

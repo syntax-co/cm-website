@@ -31,12 +31,12 @@ const MiddleSection = () => {
                         
                         <div className="h-5/6 
                         text-light flex flex-col
-                        p-8"
+                        "
                         >   
                             <div className="flex justify-center
                             pb-6"
                             >
-                                <div className="w-48 aspect-square bg-secondary
+                                <div className="w-40 aspect-square bg-secondary
                                 border-2 border-primary
                                 rounded-full bg-center bg-contain"
                                 style={{
@@ -45,7 +45,7 @@ const MiddleSection = () => {
                                 />
                             </div>
 
-                            <div className='text-3xl my-8  py-1
+                            <div className='text-3xl my-4  py-1
                             '
                             >
                                 Hey There,
@@ -80,10 +80,8 @@ const MiddleSection = () => {
                     </div>
                 </div>
             </div>
-
-            <ContactCard />
-
-            <ProjectsCard />
+            
+            
 
         </div>
     );

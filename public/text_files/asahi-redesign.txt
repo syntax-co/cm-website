@@ -1,0 +1,4 @@
+
+“Asahi Roll” was a small sushi place in the Rogers Park area. I created
+a demo site to practice my skills and created a site that was a little 
+more modern than the site they had up.

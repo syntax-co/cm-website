@@ -1,0 +1,8 @@
+
+
+This is a redesign of the original site created for the DAO NFT project. The previous design was a 
+little clunky and I had wished to make it cleaner and to show my idea for adding extra functionality
+for the CCC Members with the dashboard demo. I had also started a redesign to show my growth in 
+my skills as a Web Developer.
+<##spacer##>
+Warning: This website is currently under heavy construction and is used only for display purposes.

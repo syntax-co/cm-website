@@ -61,7 +61,7 @@ const TechTile = ({label,dex}) => {
         <motion.div className="w-[30%] h-14 p-2
         flex items-center
         rounded-md border text-light mr-auto
-        font-display text-xl
+        font-display text-lg
         "
 
         initial={{opacity:0}}
