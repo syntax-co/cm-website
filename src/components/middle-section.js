@@ -12,8 +12,14 @@ const MiddleSection = () => {
 
 
     return (
-        <div className='w-full h-2/3 pl-16
-        flex flex-1' 
+        <div className='w-full h-2/3 
+        flex flex-1
+        
+        sm:px-16
+        md:px-16
+        lg:px-16
+        xl:px-32
+        ' 
         >
             
             <div className='flex flex-1

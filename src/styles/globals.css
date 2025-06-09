@@ -15,6 +15,7 @@
 } */
 
 :root {
+  --transparent:'#ffffff00';
   --background: #222222;
   --foreground: #2e2e2e;
   --light: #CAD2C5;
