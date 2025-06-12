@@ -37,6 +37,40 @@
   }
 }
 
+
+.glass-nav {
+  /* frosted glass look */
+  background: rgba(255, 255, 255, 0.05);   /* see‑through “tint” */
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(14px) ;
+
+
+  /* soft inner shadow / glow */
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02),
+              0 12px 32px rgba(0, 0, 0, 0.45);
+
+  /* optional: give it a little padding */
+  padding: 2rem;
+}
+
+
+/* glass-card.css */
+.glass-card {
+  /* frosted glass look */
+  background: rgba(255, 255, 255, 0.05);   /* see‑through “tint” */
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(14px) ;
+
+  /* subtle separator */
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  /* soft inner shadow / glow */
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02),
+              0 12px 32px rgba(0, 0, 0, 0.45);
+
+}
+
+
 body {
   background:linear-gradient(-135deg,var(--background) 50%,var(--primary) 275%)
   /* background-color: var(--background); */

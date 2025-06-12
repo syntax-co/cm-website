@@ -43,8 +43,9 @@ const Navbar = () => {
 
     return (
         <div className="w-full h-[8vh]
-        bg-foreground border-b border-primary 
+         border-b border-primary 
         flex items-center 
+        glass-nav
         
         sm:px-16
         md:px-16
