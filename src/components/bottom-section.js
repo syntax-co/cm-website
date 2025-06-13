@@ -6,9 +6,8 @@ import { useStateContext } from "@/contexts/state-context";
 
 const BottomSection = () => {
     
-    const {screenSize} = useStateContext
+    const {screenSize} = useStateContext()
     
-
     
     
     return (
@@ -16,6 +15,17 @@ const BottomSection = () => {
         border-t-2 border-primary px-16
         flex items-center justify-start
         bg-foreground
+
+        sm:h-[10vh]
+        md:h-[10vh]
+        lg:h-[20vh]
+        xl:h-[20vh]
+
+        sm:px-4
+        md:px-4
+        lg:px-8
+        xl:px-16
+
         '
         >
 
@@ -25,10 +35,15 @@ const BottomSection = () => {
                 <Wave />
             }
 
-            <div className='w-fit  leading-[100%] 
+            <div className='w-fit mx-auto leading-[100%] 
             text-light
             font-display relative
-            text-[21vw]
+            
+
+            sm:text-[40px]
+            md:text-[50px]
+            lg:text-[100px]
+            xl:text-[100px]
 
             
             '

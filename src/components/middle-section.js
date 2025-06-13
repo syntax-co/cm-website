@@ -3,6 +3,7 @@ import ContactCard from "./contact-card";
 import ProjectsCard from "./projects-card";
 import TechPanel from "./tech-panel";
 import { useStateContext } from "@/contexts/state-context";
+import { useEffect } from "react";
 
 
 
@@ -42,7 +43,7 @@ const LeftSection = () => {
     const {toggleViewTech} = useStateContext();
 
     return(
-        <div className='p-12
+        <div className='p-4
         flex flex-col justify-center
         font-primary
         
@@ -122,10 +123,9 @@ const LeftSection = () => {
 
 const MiddleSection = () => {
 
-    const {viewTech,toggleViewTech} = useStateContext()
+    const {viewTech,screenSize,toggleViewTech} = useStateContext()
+
    
-
-
 
     return (
         <div className='w-full h-2/3 
@@ -152,11 +152,16 @@ const MiddleSection = () => {
                 >
                     
                     {
-                        !viewTech?
+                        (!viewTech || (screenSize=='lg'|| screenSize=='xl'))?
                         <LeftSection />:
                         <RightSection />
                     }
 
+
+                    {
+                        (screenSize=='lg'||screenSize=='xl')&&
+                        <RightSection />
+                    }
                     
 
                     

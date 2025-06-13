@@ -1,5 +1,6 @@
 import StarfieldBackground from "@/components/misc/particle-background";
 import ParticleBackground from "@/components/misc/particle-background";
+import MobileMenu from "@/components/mobile-menu";
 import Navbar from "@/components/navbar";
 import { StateProvider } from "@/contexts/state-context";
 import "@/styles/globals.css";
@@ -13,6 +14,8 @@ export default function App({ Component, pageProps }) {
         <div className="absolute inset-0 h-full w-full z-0">
           <StarfieldBackground />
         </div>
+
+        <MobileMenu />
 
         {/* Main content */}
         <div className="relative z-10">

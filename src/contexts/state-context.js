@@ -16,7 +16,13 @@ export const StateProvider = ({ children }) => {
     const [view,setView] = useState('main')
     const [viewTech,setViewTech] = useState(false)
     const [screenSize,setScreenSize] = useState('sm')
+    const [viewMobileMenu,setViewMobileMenu] = useState(false)
 
+    const pages = {
+        'projects':'/projects',
+        'about':'/about',
+        "Let's Work Together":'/contact'
+    }
                                                                                               
                                                                                               
     // █████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗
@@ -24,7 +30,11 @@ export const StateProvider = ({ children }) => {
 
     const toggleViewTech = () => {
         setViewTech(!viewTech);
-    }                                                          
+    }
+    
+    const toggleMobileMenu = () => {
+        setViewMobileMenu(!viewMobileMenu)
+    }
                                                                                               
     const handleRouteChange = (url) => {
         setCurrentPath(url);
@@ -34,22 +44,21 @@ export const StateProvider = ({ children }) => {
     function checkScreen() {
         const width = window.innerWidth;
         const height = window.innerHeight;
-
+        
         let size
 
-        if (width < 640) {
+        if (width < 360) {
             size = 'sm'; // small (mobile)
         } else if (width < 768) {
             size = 'md'; // medium (tablet)
         } else if (width < 1024) {
             size = 'lg'; // large (laptop)
-        } else if (width < 1280) {
+        } else if (width < 1536) {
             size = 'xl'; // extra large (desktop)
         } else {
             size = '2xl'; // 2x large
         }
-
-
+        
         setScreenSize(size)
     }
 
@@ -80,10 +89,13 @@ export const StateProvider = ({ children }) => {
         view,
         screenSize,
         viewTech,
+        viewMobileMenu,
         setSelectedTile,
         setSelectedProject,
         setView,
-        toggleViewTech
+        toggleViewTech,
+        toggleMobileMenu,
+        pages
         }}>
         {children}
         </StateContext.Provider>

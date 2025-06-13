@@ -2,7 +2,7 @@ import { useStateContext } from "@/contexts/state-context"
 import { motion } from "framer-motion"
 import { useRouter } from "next/router"
 import { useState } from "react"
-
+import { CiMenuFries } from "react-icons/ci";
 
 const NavItem = ({item,path}) => {
     const router = useRouter()
@@ -31,12 +31,10 @@ const NavItem = ({item,path}) => {
 
 
 const Navbar = () => {
+
     const router = useRouter()
-    const pages = {
-        'projects':'/projects',
-        'about':'/about',
-        "Let's Work Together":'/contact'
-    }
+    const {screenSize,toggleMobileMenu,pages} = useStateContext()
+    
 
 
 
@@ -68,6 +66,7 @@ const Navbar = () => {
             "
             >
                 {
+                    (screenSize=='lg'||screenSize=='xl')?
                     Object.keys(pages).map((item,dex) => {
 
                         return(
@@ -76,7 +75,17 @@ const Navbar = () => {
                             path={pages[item]}
                             />
                         )
-                    })
+                    }):
+                    <div
+                    
+                    onClick={() => {
+                        toggleMobileMenu()
+                    }}
+                    >
+                        <CiMenuFries className="text-white"
+                        size={35}
+                        />
+                    </div>
                 }
             </div>
 

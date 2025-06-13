@@ -1,6 +1,7 @@
 import { useStateContext } from "@/contexts/state-context";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { IoIosArrowBack } from "react-icons/io";
 
 
 
@@ -33,7 +34,7 @@ const SectionTile = ({label}) => {
     const [hovering,setHovering] = useState()    
 
     return(
-        <motion.div className=" p-1.5 mx-2
+        <motion.div className=" px-2 py-1 mx-2
         text-xl cursor-pointer border
         font-primary rounded-md
 
@@ -57,24 +58,23 @@ const SectionTile = ({label}) => {
 }
 
 
-const TechTile = ({label,dex}) => {
+const TechTile = ({label,dex, grow=false}) => {
+
+    const {screenSize} = useStateContext()
+
 
     return(
-        <motion.div className=" h-12 p-2
-        flex items-center
-        rounded-md border text-light mr-auto
-        font-display
-        
-        sm:text-base
-        md:text-base
-        lg:text-lg
-        xl:text-lg
-
-        sm:w-[45%]
-        md:w-[45%]
-        lg:w-[30%]
-        xl:w-[30%]
-        "
+        <motion.div className={
+        "w-full h-12 p-2 bg-primaryOpac "+
+        "flex items-center rounded-md border text-light mr-auto font-display "+
+        "sm:text-base md:text-base lg:text-lg xl:text-lg "+
+        (grow&&
+            (
+                (screenSize=='sm' || screenSize=='md')?
+                'col-span-2':'col-span-3'
+            )
+        )
+        }
 
         initial={{opacity:0}}
         animate={{
@@ -103,7 +103,7 @@ const TechTile = ({label,dex}) => {
 const TechPanel = () => {
 
     
-    const {technologies,selectedTile} = useStateContext()
+    const {technologies,selectedTile,screenSize,toggleViewTech} = useStateContext()
     const [techView,setTechView] = useState([])
     const [hide,setHide] = useState(false)
 
@@ -144,6 +144,21 @@ const TechPanel = () => {
             "
             >
                 {
+                    (screenSize=='sm'||screenSize=='md')&&
+                    <div className="w-16 bg-secondary
+                    flex items-center justify-center
+                    rounded-md mr-auto
+                    "
+
+                    onClick={() => {
+                        toggleViewTech()
+                    }}
+                    >
+                        <IoIosArrowBack size={30} />
+                    </div>
+                }
+
+                {
                     Object.keys(technologies).map((key,dex) => {
                         
                         return(
@@ -154,24 +169,41 @@ const TechPanel = () => {
                     })
                 }
 
+                
+
             </div>
             
             <div className="w-full h-[2px] bg-primary my-2" 
             />
 
             <div className="h-fit pt-8
-            flex flex-wrap gap-y-4"
+            grid gap-4
+            
+            sm:grid-rows-5
+            md:grid-rows-5
+            lg:grid-rows-3
+            xl:grid-rows-3
+
+            sm:grid-cols-2
+            md:grid-cols-2
+            lg:grid-cols-3
+            xl:grid-cols-3
+            "
             >
                 <AnimatePresence >
                 {
                     !hide&&
                     techView.map((item,dex)=>{
 
+
                         if (item!='empty') {
+                            const even = (techView.length%2)==0
+
                             return(
                                 <TechTile key={'tech-tile-'+dex} 
                                 label={item}
                                 dex={dex}
+                                grow={!even&&dex==(techView.length-1)}
                                 />
                             )
                         } else {
