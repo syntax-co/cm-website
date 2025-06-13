@@ -1,14 +1,17 @@
+import { useStateContext } from "@/contexts/state-context";
 
 
 
 
 const AboutMain = () => {
+    
+    const {setView} = useStateContext()
 
 
     return(
         <div className="w-5/6 h-5/6
         flex flex-col
-        rounded-lg py-8 px-12
+        rounded-lg py-12 px-12
         glass-card
         font-primary text-light
         
@@ -69,6 +72,9 @@ const AboutMain = () => {
                     >
                         <div className="p-2 text-lg bg-primary w-fit
                         rounded-md cursor-pointer"
+                        onClick={() => {
+                            setView('wips')
+                        }}
                         >
                             Current Projects
                         </div>

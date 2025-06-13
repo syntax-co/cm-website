@@ -1,0 +1,12 @@
+{
+    "tagify":{
+        "name":"Tagify",
+        "description":"./text_files/wips/tagify.txt",
+        "status":"active"
+    },
+    "zenify":{
+        "name":"Zenify",
+        "description":"./text_files/wips/zenify.txt",
+        "status":"paused"
+    }
+}

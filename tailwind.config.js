@@ -19,6 +19,14 @@ module.exports = {
         secondaryOpac:'var(--secondary-opac)',
       },
     },
+    
+    screens: {
+      'sm': '360px',     // redefined to support small phones
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+    },
   },
   plugins: [],
 };

@@ -65,8 +65,9 @@
   border: 1px solid rgba(255, 255, 255, 0.12);
 
   /* soft inner shadow / glow */
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02),
-              0 12px 32px rgba(0, 0, 0, 0.45);
+  @apply
+  shadow-xl
+  ;
 
 }
 
@@ -80,4 +81,11 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+
+.px-spacing {
+  @apply
+  px-[8vw]
+  ;
 }

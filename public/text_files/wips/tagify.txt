@@ -1,0 +1,1 @@
+I’m shaping this into a no-frills tool where you’ll be able to generate a QR code in seconds, download it instantly, and pop into a tiny dashboard that shows every scan as it happens.

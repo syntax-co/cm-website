@@ -1,0 +1,1 @@
+I’m building this so you can pour in your operating hours, crew availability, and any special notes, hit “generate,” and get back a conflict-free schedule crafted in seconds by an OpenAI-powered assistant.

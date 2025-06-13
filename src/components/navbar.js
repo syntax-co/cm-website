@@ -35,7 +35,7 @@ const Navbar = () => {
     const pages = {
         'projects':'/projects',
         'about':'/about',
-        'contact':'/contact'
+        "Let's Work Together":'/contact'
     }
 
 
@@ -45,12 +45,9 @@ const Navbar = () => {
         <div className="w-full h-[8vh]
          border-b border-primary 
         flex items-center 
-        glass-nav
+        glass-nav px-spacing
         
-        sm:px-16
-        md:px-16
-        lg:px-16
-        xl:px-32
+        
         "
         >
             

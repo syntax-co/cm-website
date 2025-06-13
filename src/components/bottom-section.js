@@ -1,8 +1,16 @@
+import { useEffect, useState } from "react";
 import Wave from "./misc/wave";
+import { useStateContext } from "@/contexts/state-context";
 
 
 
 const BottomSection = () => {
+    
+    const {screenSize} = useStateContext
+    
+
+    
+    
     return (
         <div className='h-1/4 relative
         border-t-2 border-primary px-16
@@ -11,17 +19,18 @@ const BottomSection = () => {
         '
         >
 
-            <Wave />
+
+            {
+                (screenSize =='lg' || screenSize == 'xl') &&
+                <Wave />
+            }
 
             <div className='w-fit  leading-[100%] 
-            text-[170px] text-light
+            text-light
             font-display relative
+            text-[21vw]
 
-
-            sm:text-[170px]
-            md:text-[170px]
-            lg:text-[100px]
-            xl:text-[150px]
+            
             '
             >
                 chris munoz

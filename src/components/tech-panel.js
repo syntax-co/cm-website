@@ -36,6 +36,8 @@ const SectionTile = ({label}) => {
         <motion.div className=" p-1.5 mx-2
         text-xl cursor-pointer border
         font-primary rounded-md
+
+        
         "
 
         initial={{color:'#CAD2C5',background:'#222222'}}
@@ -58,10 +60,20 @@ const SectionTile = ({label}) => {
 const TechTile = ({label,dex}) => {
 
     return(
-        <motion.div className="w-[30%] h-14 p-2
+        <motion.div className=" h-12 p-2
         flex items-center
         rounded-md border text-light mr-auto
-        font-display text-lg
+        font-display
+        
+        sm:text-base
+        md:text-base
+        lg:text-lg
+        xl:text-lg
+
+        sm:w-[45%]
+        md:w-[45%]
+        lg:w-[30%]
+        xl:w-[30%]
         "
 
         initial={{opacity:0}}
@@ -106,7 +118,7 @@ const TechPanel = () => {
         
         if (nextMultiple-sect.length>0) {
             for (var i=0; i<(nextMultiple-sect.length); i++) {
-                holder.push('empty')
+                // holder.push('empty')
             }
         }
         // console.log(holder)

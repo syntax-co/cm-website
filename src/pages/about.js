@@ -1,11 +1,13 @@
 import AboutMain from "@/components/about-main";
-import { useState } from "react";
+import AboutWips from "@/components/about-wips";
+import { useStateContext } from "@/contexts/state-context";
 
 
 
 const About = () => {
     
-    const [view,setView] = useState('main')
+    const {view} = useStateContext()
+   
     
     return (
         <div className="h-[92vh] w-full
@@ -17,7 +19,7 @@ const About = () => {
                 view=='main'?
                 <AboutMain />:
                 view=='wips'?
-                ''
+                <AboutWips />
                 :''
             }
             
