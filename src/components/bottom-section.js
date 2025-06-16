@@ -8,11 +8,11 @@ const BottomSection = () => {
     
     const {screenSize} = useStateContext()
     
-    
+
     
     return (
-        <div className='h-1/4 relative
-        border-t-2 border-primary px-16
+        <div className='max-h-1/4 relative
+        border-t-2 border-primary px-16 overflow-hidden
         flex items-center justify-start
         bg-foreground
 

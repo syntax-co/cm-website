@@ -40,7 +40,7 @@ const RightSection = () => {
 
 const LeftSection = () => {
 
-    const {toggleViewTech} = useStateContext();
+    const {toggleViewTech,screenSize} = useStateContext();
 
     return(
         <div className='p-4
@@ -56,14 +56,15 @@ const LeftSection = () => {
         '
         >
             
-            <div className="h-5/6 
+            <div className="h-5/6
+            px-12
             text-light flex flex-col
             "
             >   
                 <div className="flex justify-center
                 pb-6"
                 >
-                    <div className="w-40 aspect-square bg-secondary
+                    <div className="w-32 aspect-square bg-secondary
                     border-2 border-primary
                     rounded-full bg-center bg-contain"
                     style={{
@@ -72,44 +73,46 @@ const LeftSection = () => {
                     />
                 </div>
                 
-                <div className='text-3xl my-4  py-1
+                <div className='text-3xl my-auto py-1
                 '
                 >
                     Hey There,
                 </div>
 
-                <div className='text-xl'
+                <div className='text-xl my-auto' 
                 >
                     I’m Chris — a backend developer who starts every project at 
                     the drawing board. I love breaking down real problems, exploring 
                     what’s possible, and building clean, scalable systems that get things done.
                 </div>
 
-                
-                <div className="w-full"
-                >
-                    <div className="w-fit flex mt-4  ml-auto
-                    "
-                    
-                    onClick={() => {toggleViewTech()}}
+                {
+                    !(screenSize=='lg'||screenSize=='xl')&&
+                    <div className="w-full"
                     >
-                        <div className="bg-light text-background
-                        text-xl p-2 rounded-l-md"
-                        >
-                            My Toolkit
-                        </div>                  
-
-                        <div className="w-12 h-12 bg-light ml-1
-                        rounded-r-md text-background
-                        flex items-center justify-center
+                        <div className="w-fit flex mt-4  ml-auto
                         "
+                        
+                        onClick={() => {toggleViewTech()}}
                         >
-                            <IoIosArrowForward 
-                            size={30}
-                            />
-                        </div>              
+                            <div className="bg-light text-background
+                            text-xl p-2 rounded-l-md"
+                            >
+                                My Toolkit
+                            </div>                  
+
+                            <div className="w-12 h-12 bg-light ml-1
+                            rounded-r-md text-background
+                            flex items-center justify-center
+                            "
+                            >
+                                <IoIosArrowForward 
+                                size={30}
+                                />
+                            </div>              
+                        </div>
                     </div>
-                </div>
+                }
                 
                 
 

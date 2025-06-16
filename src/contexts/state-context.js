@@ -17,6 +17,13 @@ export const StateProvider = ({ children }) => {
     const [viewTech,setViewTech] = useState(false)
     const [screenSize,setScreenSize] = useState('sm')
     const [viewMobileMenu,setViewMobileMenu] = useState(false)
+    const [viewProject,setViewProject] = useState(false)
+    
+    const statusColors = {
+        active:'#7ff097',
+        paused:'#fffd81',
+        abandoned:'#ff596f'
+    }
 
     const pages = {
         'projects':'/projects',
@@ -34,6 +41,10 @@ export const StateProvider = ({ children }) => {
     
     const toggleMobileMenu = () => {
         setViewMobileMenu(!viewMobileMenu)
+    }
+
+    const toggleViewProject = () => {
+        setViewProject(!viewProject)
     }
                                                                                               
     const handleRouteChange = (url) => {
@@ -58,7 +69,7 @@ export const StateProvider = ({ children }) => {
         } else {
             size = '2xl'; // 2x large
         }
-        
+
         setScreenSize(size)
     }
 
@@ -80,6 +91,7 @@ export const StateProvider = ({ children }) => {
 
     return (
         <StateContext.Provider value={{
+        statusColors,
         technologies,
         projects,
         wips,
@@ -90,12 +102,14 @@ export const StateProvider = ({ children }) => {
         screenSize,
         viewTech,
         viewMobileMenu,
+        pages,
+        viewProject,
         setSelectedTile,
         setSelectedProject,
         setView,
         toggleViewTech,
         toggleMobileMenu,
-        pages
+        toggleViewProject
         }}>
         {children}
         </StateContext.Provider>

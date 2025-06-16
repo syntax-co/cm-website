@@ -1,6 +1,9 @@
 import { useStateContext } from "@/contexts/state-context"
 import { useEffect, useState } from "react"
 import { IoIosArrowBack } from "react-icons/io";
+import WipCarousel from "./wips-carousel";
+
+
 
 
 
@@ -60,12 +63,9 @@ const FillerTile = () => {
 
 const ProjectTile = ({data}) => {
 
+    const {statusColors} = useStateContext()
     const [text,setText] = useState('')
-    const statusColors = {
-        active:'#7ff097',
-        paused:'#fffd81',
-        abandoned:'#ff596f'
-    }
+    
 
     const getText = async() => {
         const result = await fetch(data.description)
@@ -113,11 +113,18 @@ const ProjectTile = ({data}) => {
 
 
 const AboutWips = () => {
-    const {wips} = useStateContext()
+    const {wips,screenSize} = useStateContext()
     const [tiles,setTiles] = useState([])
     
     const creatTiles = () => {
-        const holder = []
+        const holder = [];
+        let max;
+
+        if (screenSize=='lg'||screenSize=='xl') {
+            max=6
+        } else {
+            max=4
+        }
 
         holder.push(<IntroTile key='intro' />)
 
@@ -130,8 +137,8 @@ const AboutWips = () => {
         })
 
 
-        if (holder.length<6) {
-            const dif = 6-holder.length
+        if (holder.length<max) {
+            const dif = max-holder.length
             
             for (let i = 0; i<dif; i++) {
                 holder.push(<FillerTile key={'filler-tile-'+i} />)
@@ -145,16 +152,31 @@ const AboutWips = () => {
 
     useEffect(() => {
         creatTiles()
-    },[])
+    },[screenSize])
 
     return (
-        <div className="w-5/6 h-5/6
+        screenSize=='lg'||screenSize=='xl'?
+        <div className="w-5/6 h-5/6 
         grid grid-rows-2 grid-cols-3
-        gap-10
-        rounded-lg py-12 px-12
+        
+        rounded-lg 
         glass-car
         font-primary text-light
         
+        sm:gap-2
+        md:gap-2
+        lg:gap-10
+        xl:gap-10
+
+        sm:grid-cols-2
+        md:grid-cols-2
+        lg:grid-cols-3
+        xl:grid-cols-3
+
+        sm:h-full
+        md:h-full
+        lg:h-5/6
+        xl:h-5/6
         "
         >
 
@@ -162,10 +184,12 @@ const AboutWips = () => {
                 tiles.map((tile) => {
                     return tile
                 })
+                    
             }   
+    
 
-
-        </div>
+        </div>:
+        <WipCarousel />
     );
 }
  

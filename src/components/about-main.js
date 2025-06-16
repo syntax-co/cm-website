@@ -11,14 +11,20 @@ const AboutMain = () => {
     return(
         <div className="w-5/6 h-5/6
         flex flex-col
-        rounded-lg py-12 px-12
+        rounded-lg py-4 px-4
         glass-card
         font-primary text-light
         
         "
         >
 
-            <div className="w-4/5 h-full flex mx-auto"
+            <div className=" h-full flex mx-auto
+            
+            sm:w-full
+            md:w-full
+            lg:w-4/5
+            xl:w-4/5
+            "
             >
 
                 <div className="w-fit flex flex-col"
@@ -28,7 +34,13 @@ const AboutMain = () => {
 
                     <div className="w-fit
                     flex flex-col items-center
-                    leading-[100%] text-[75px]"
+                    leading-[100%] 
+                    
+                    sm:text-[45px]
+                    md:text-[75px]
+                    lg:text-[75px]
+                    xl:text-[75px]
+                    "
                     >
                         
                         <div className=" mb-2 
@@ -38,7 +50,13 @@ const AboutMain = () => {
                             Hello, I'm
 
                             <div className="w-40 h-[2px] bg-light
-                            mx-4"/>
+                            mx-4
+                            
+                            sm:w-10
+                            md:w-10
+                            lg:w-40
+                            xl:w-40
+                            "/>
                         </div>
 
                         <div className="w-full mb-6 
@@ -52,7 +70,7 @@ const AboutMain = () => {
 
 
 
-                    <div className=" indent-8 text-lg my-auto
+                    <div className="w-full indent-8 text-lg my-auto
                     text-wrap "
                     >
                         I'm a backend‑focused developer based in Chicago who loves turning 
