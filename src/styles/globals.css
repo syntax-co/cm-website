@@ -37,12 +37,17 @@
   }
 }
 
+.glass {
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(14px) ;
+}
+
 
 .glass-nav {
   /* frosted glass look */
   background: rgba(255, 255, 255, 0.05);   /* see‑through “tint” */
   backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(14px) ;
+  -webkit-backdrop-filter: blur(14px);
 
 
   /* soft inner shadow / glow */
@@ -88,4 +93,42 @@ body {
   @apply
   px-[8vw]
   ;
+}
+
+
+/* Utility classes to hide scrollbars on any element.
+   Usage: <div class="hide-scrollbar"> ... </div>
+----------------------------------------------------*/
+
+/* 1. Cross‑browser full scrollbar hiding */
+.hide-scrollbar {
+  /* Firefox */
+  scrollbar-width: none;
+  overflow: -moz-scrollbars-none; /* old FF fallback */
+
+  /* Internet Explorer 10+ */
+  -ms-overflow-style: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* 2. Hide only the horizontal scrollbar (keep vertical) */
+.hide-scrollbar-x {
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.hide-scrollbar-x::-webkit-scrollbar:horizontal {
+  display: none;
+}
+
+/* 3. Hide only the vertical scrollbar (keep horizontal) */
+.hide-scrollbar-y {
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.hide-scrollbar-y::-webkit-scrollbar:vertical {
+  display: none;
 }

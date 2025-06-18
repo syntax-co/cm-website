@@ -28,7 +28,7 @@ export const StateProvider = ({ children }) => {
     const pages = {
         'projects':'/projects',
         'about':'/about',
-        "Let's Work Together":'/contact'
+        "Let's Work Together":'/lets-work-together'
     }
                                                                                               
                                                                                               

@@ -24,8 +24,8 @@ const ProjectPlaque = ({label}) => {
             backgroundColor:(screenSize=='lg'||screenSize=='xl')&&(selectedProject==label)?'#CAD2C5':'#222222'
         }}
         whileHover={{
-            color:'#222222',
-            backgroundColor:'#CAD2C5'
+            color:(screenSize=='lg'||screenSize=='xl')?'#222222':'',
+            backgroundColor:(screenSize=='lg'||screenSize=='xl')?'#CAD2C5':''
         }}
 
         onClick={()=> {
@@ -116,9 +116,14 @@ const Projects = () => {
         setDescription(text)
     }
 
+    const handleBack = () => {
+        toggleViewProject()
+        
+    }
+
     useEffect(() => {
-        console.log(viewProject)
-        if (selectedProject) {
+        console.log(viewProject,screenSize)
+        if (selectedProject) { 
             getText()
         }
     }, [selectedProject]);
@@ -149,7 +154,7 @@ const Projects = () => {
 
 
             {
-                viewProject || screenSize=='lg' || screenSize=='xl'&&
+                (viewProject || screenSize=='lg' || screenSize=='xl')&&
                 <div className="flex-1 
                 rounded-xl flex flex-col items-center
                 p-4
@@ -215,6 +220,7 @@ const Projects = () => {
 
                     "
                     >
+                        
                         <div className="w-full h-fit "
                         >
                             <div className="w-full aspect-video
@@ -328,7 +334,7 @@ const Projects = () => {
                             rounded-md flex justify-center"
 
                             onClick={() => {
-                                toggleViewProject()
+                                handleBack()
                             }}
                             >
                                 <IoIosArrowBack className="text-white"

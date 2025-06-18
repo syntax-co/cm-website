@@ -8,5 +8,25 @@
         "name":"Zenify",
         "description":"./text_files/wips/zenify.txt",
         "status":"paused"
+    },
+    "tagify-2":{
+        "name":"Tagify",
+        "description":"./text_files/wips/tagify.txt",
+        "status":"active"
+    },
+    "zenify-2":{
+        "name":"Zenify",
+        "description":"./text_files/wips/zenify.txt",
+        "status":"paused"
+    },
+    "tagify-3":{
+        "name":"Tagify",
+        "description":"./text_files/wips/tagify.txt",
+        "status":"active"
+    },
+    "zenify-3":{
+        "name":"Zenify",
+        "description":"./text_files/wips/zenify.txt",
+        "status":"paused"
     }
 }
