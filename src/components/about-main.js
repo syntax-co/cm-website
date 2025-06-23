@@ -1,4 +1,5 @@
 import { useStateContext } from "@/contexts/state-context";
+import { motion } from "framer-motion";
 
 
 
@@ -9,13 +10,23 @@ const AboutMain = () => {
 
 
     return(
-        <div className="w-5/6 h-5/6
+        <motion.div className="w-5/6 h-5/6
         flex flex-col
         rounded-lg py-4 px-4
         glass-card
         font-primary text-light
         
+        sm:py-8
+        md:py-8
+        lg:py-12
+        xl:py-12
+
+
         "
+
+        exit={{opacity:0}}
+        animate={{opacity:1}}
+        initial={{opacity:0}}
         >
 
             <div className=" h-full flex mx-auto
@@ -37,7 +48,7 @@ const AboutMain = () => {
                     leading-[100%] 
                     
                     sm:text-[45px]
-                    md:text-[75px]
+                    md:text-[45px]
                     lg:text-[75px]
                     xl:text-[75px]
                     "
@@ -70,8 +81,15 @@ const AboutMain = () => {
 
 
 
-                    <div className="w-full indent-8 text-lg my-auto
-                    text-wrap "
+                    <div className="w-full indent-8 my-auto
+                    text-wrap 
+                    
+                    sm:text-base
+                    md:text-base
+                    lg:text-lg
+                    xl:text-lg
+                    
+                    "
                     >
                         I'm a backend‑focused developer based in Chicago who loves turning 
                         complex ideas into clean, scalable APIs and automation tools. 
@@ -89,7 +107,7 @@ const AboutMain = () => {
                     <div className="flex justify-end"
                     >
                         <div className="p-2 text-lg bg-primary w-fit
-                        rounded-md cursor-pointer"
+                        rounded-md cursor-pointer text-background"
                         onClick={() => {
                             setView('wips')
                         }}
@@ -110,7 +128,7 @@ const AboutMain = () => {
 
             
 
-        </div>
+        </motion.div>
     )
 }
 

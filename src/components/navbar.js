@@ -1,7 +1,7 @@
 import { useStateContext } from "@/contexts/state-context"
 import { motion } from "framer-motion"
 import { useRouter } from "next/router"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { CiMenuFries } from "react-icons/ci";
 
 const NavItem = ({item,path}) => {
@@ -33,11 +33,9 @@ const NavItem = ({item,path}) => {
 const Navbar = () => {
 
     const router = useRouter()
-    const {screenSize,toggleMobileMenu,pages} = useStateContext()
+    const {toggleMobileMenu,pages,biggerScreen} = useStateContext()
     
-
-
-
+    
 
     return (
         <div className="w-full h-[8vh]
@@ -66,7 +64,7 @@ const Navbar = () => {
             "
             >
                 {
-                    (screenSize=='lg'||screenSize=='xl')?
+                    biggerScreen?
                     Object.keys(pages).map((item,dex) => {
 
                         return(

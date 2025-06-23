@@ -1,4 +1,5 @@
 import { useStateContext } from "@/contexts/state-context";
+import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
@@ -217,12 +218,15 @@ export default function WipCarousel() {
 
   
   /* ───────── render ───────── */
-
+  
   return (
-    <div className="relative w-full h-full overflow-hidden flex flex-col font-primary">
-      
-      
-      
+    <motion.div className="relative w-full h-full overflow-hidden flex flex-col font-primary"
+    
+    exit={{opacity:0}}
+    animate={{opacity:1}}
+    initial={{opacity:0}}
+    >
+        
       {/* Scrollable Slides */}
       <div
         id="parent-scroll"
@@ -285,7 +289,7 @@ export default function WipCarousel() {
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

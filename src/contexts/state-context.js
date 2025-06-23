@@ -15,9 +15,10 @@ export const StateProvider = ({ children }) => {
     const [selectedProject,setSelectedProject] = useState(Object.keys(projects)[0])
     const [view,setView] = useState('main')
     const [viewTech,setViewTech] = useState(false)
-    const [screenSize,setScreenSize] = useState('sm')
+    const [screenSize,setScreenSize] = useState('xl')
     const [viewMobileMenu,setViewMobileMenu] = useState(false)
     const [viewProject,setViewProject] = useState(false)
+    const [biggerScreen,setBiggerScreen] = useState(false)
     
     const statusColors = {
         active:'#7ff097',
@@ -49,7 +50,6 @@ export const StateProvider = ({ children }) => {
                                                                                               
     const handleRouteChange = (url) => {
         setCurrentPath(url);
-        console.log('Updated path:', url); // optional logging
     };
 
     function checkScreen() {
@@ -73,6 +73,22 @@ export const StateProvider = ({ children }) => {
         setScreenSize(size)
     }
 
+    const checkBiggerScreen = () => {
+        if (screenSize=='lg'||screenSize=='xl'||screenSize=='2xl') {
+            
+            setBiggerScreen(true)
+        } else {
+            setBiggerScreen(false)
+        }
+    }
+
+
+
+    useEffect(() => {
+        checkBiggerScreen()
+    }, [screenSize]);
+    
+    
     useEffect(() => {
         checkScreen()
 
@@ -104,6 +120,7 @@ export const StateProvider = ({ children }) => {
         viewMobileMenu,
         pages,
         viewProject,
+        biggerScreen,
         setSelectedTile,
         setSelectedProject,
         setView,

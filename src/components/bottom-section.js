@@ -6,7 +6,7 @@ import { useStateContext } from "@/contexts/state-context";
 
 const BottomSection = () => {
     
-    const {screenSize} = useStateContext()
+    const {biggerScreen} = useStateContext()
     
 
     
@@ -31,7 +31,7 @@ const BottomSection = () => {
 
 
             {
-                (screenSize =='lg' || screenSize == 'xl') &&
+                biggerScreen&&
                 <Wave />
             }
 

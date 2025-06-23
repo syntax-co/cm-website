@@ -7,7 +7,7 @@ import { IoIosArrowBack } from "react-icons/io";
 
 const ProjectPlaque = ({label}) => {
 
-    const {selectedProject,setSelectedProject,screenSize,toggleViewProject} = useStateContext()
+    const {selectedProject,setSelectedProject,toggleViewProject,biggerScreen} = useStateContext()
 
     return(
         <motion.div className="bg-background rounded-md p-3 mx-2
@@ -20,17 +20,17 @@ const ProjectPlaque = ({label}) => {
             backgroundColor:'#222222'
         }}
         animate={{
-            color:(screenSize=='lg'||screenSize=='xl')&&(selectedProject==label)?'#222222':'#CAD2C5',
-            backgroundColor:(screenSize=='lg'||screenSize=='xl')&&(selectedProject==label)?'#CAD2C5':'#222222'
+            color:(biggerScreen)&&(selectedProject==label)?'#222222':'#CAD2C5',
+            backgroundColor:(biggerScreen)&&(selectedProject==label)?'#CAD2C5':'#222222'
         }}
         whileHover={{
-            color:(screenSize=='lg'||screenSize=='xl')?'#222222':'',
-            backgroundColor:(screenSize=='lg'||screenSize=='xl')?'#CAD2C5':''
+            color:(biggerScreen)?'#222222':'',
+            backgroundColor:(biggerScreen)?'#CAD2C5':''
         }}
 
         onClick={()=> {
             
-            if(!(screenSize=='lg'||screenSize=='xl')) {
+            if(!(biggerScreen)) {
                 toggleViewProject()
             }
             setSelectedProject(label)}}
@@ -62,9 +62,14 @@ const ProjectList = () => {
 
 
     return(
-        <div className="w-1/4 
+        <motion.div className="w-1/4 
         flex-col mx-auto
-        py-4
+        
+        sm:py-12
+        md:py-12
+        lg:py-4
+        xl:py-4
+        
 
         sm:w-5/6
         md:w-5/6
@@ -72,8 +77,10 @@ const ProjectList = () => {
         xl:w-1/4
         "
 
-
         
+        exit={{opacity:0}}
+        animate={{opacity:1}}
+        initial={{opacity:0}}
 
         >
             <div className="
@@ -95,13 +102,13 @@ const ProjectList = () => {
                     )
                 })
             }
-        </div>
+        </motion.div>
     )
 }
 
 const Projects = () => {
     const router = useRouter()
-    const {projects,selectedProject,screenSize,viewProject,toggleViewProject} = useStateContext()
+    const {projects,selectedProject,biggerScreen,viewProject,toggleViewProject} = useStateContext()
 
     
 
@@ -122,14 +129,13 @@ const Projects = () => {
     }
 
     useEffect(() => {
-        console.log(viewProject,screenSize)
         if (selectedProject) { 
             getText()
         }
     }, [selectedProject]);
-
+    
     return (
-        <div className="w-full h-[92vh]
+        <motion.div className="w-full h-[92vh]
         flex 
         
         sm:py-0
@@ -144,21 +150,31 @@ const Projects = () => {
         lg:px-16
         xl:px-32
         "
+
+        exit={{opacity:0}}
+        animate={{opacity:1}}
+        initial={{opacity:0}}
         >
 
-            
             {
-                (!viewProject || screenSize=='lg' || screenSize=='xl')&&
-                <ProjectList />
+                (biggerScreen)&&
+                <ProjectList key={'project-list'} />
             }
 
+            <AnimatePresence mode="wait">
 
             {
-                (viewProject || screenSize=='lg' || screenSize=='xl')&&
-                <div className="flex-1 
+                !viewProject&&!biggerScreen ?
+                <ProjectList key='project-list' />:
+                (viewProject || biggerScreen)&&
+                <motion.div key='project-view' className="flex-1 
                 rounded-xl flex flex-col items-center
                 p-4
                 "
+
+                exit={{opacity:0}}
+                animate={{opacity:1}}
+                initial={{opacity:0}}
                 >
                     <div className="font-primary text-3xl
                     text-light w-5/6 mt-2 mb-4
@@ -175,7 +191,7 @@ const Projects = () => {
                         
 
                         {
-                            screenSize=='lg'||screenSize=='xl'&&
+                            biggerScreen&&
                             <motion.div className="p-2 rounded mx-2
                             "
                             initial={{backgroundColor:'#CAD2C500', color:'#CAD2C5'}}
@@ -281,7 +297,7 @@ const Projects = () => {
                         </div>
                         
                         {
-                            !(screenSize=='lg'||screenSize=='xl')&&
+                            !(biggerScreen)&&
                             <div className="w-full flex-1 pl-4
                             flex flex-col
                             "
@@ -326,7 +342,7 @@ const Projects = () => {
                     </div>
 
                     {
-                        !(screenSize=='lg'||screenSize=='xl')&&
+                        !(biggerScreen)&&
                         <div className="w-full mt-auto"
                         >
                             <div className=" bg-primaryOpac 
@@ -343,10 +359,11 @@ const Projects = () => {
                         </div>
                     }
 
-                </div>
+                </motion.div>
             }
+            </AnimatePresence>
 
-        </div>
+        </motion.div>
     );
 }
  

@@ -4,6 +4,7 @@ import ProjectsCard from "./projects-card";
 import TechPanel from "./tech-panel";
 import { useStateContext } from "@/contexts/state-context";
 import { useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 
 
@@ -11,11 +12,15 @@ import { useEffect } from "react";
 const RightSection = () => {
 
     return(
-        <div className='flex flex-col
+        <motion.div className='flex flex-col
         flex-1
         border-secondary
         
         '
+
+        exit={{opacity:0}}
+        animate={{opacity:1}}
+        initial={{opacity:0}}
         >
             <div className=' pt-8
             font-primary px-8 text-light
@@ -33,17 +38,17 @@ const RightSection = () => {
             
             <TechPanel />
 
-        </div>
+        </motion.div>
     )
 }
 
 
 const LeftSection = () => {
 
-    const {toggleViewTech,screenSize} = useStateContext();
+    const {toggleViewTech,biggerScreen} = useStateContext();
 
     return(
-        <div className='p-4
+        <motion.div className='p-4
         flex flex-col justify-center
         font-primary
         
@@ -54,6 +59,10 @@ const LeftSection = () => {
 
 
         '
+
+        exit={{opacity:0}}
+        animate={{opacity:1}}
+        initial={{opacity:0}}
         >
             
             <div className="h-5/6
@@ -87,7 +96,7 @@ const LeftSection = () => {
                 </div>
 
                 {
-                    !(screenSize=='lg'||screenSize=='xl')&&
+                    !(biggerScreen)&&
                     <div className="w-full"
                     >
                         <div className="w-fit flex mt-4  ml-auto
@@ -119,16 +128,15 @@ const LeftSection = () => {
 
             </div>
 
-        </div>
+        </motion.div>
     )
 }
 
 
 const MiddleSection = () => {
 
-    const {viewTech,screenSize,toggleViewTech} = useStateContext()
+    const {viewTech,biggerScreen} = useStateContext()
 
-   
 
     return (
         <div className='w-full h-2/3 
@@ -154,15 +162,17 @@ const MiddleSection = () => {
                 '
                 >
                     
+                    <AnimatePresence mode="wait">
                     {
-                        (!viewTech || (screenSize=='lg'|| screenSize=='xl'))?
-                        <LeftSection />:
-                        <RightSection />
+                        (!viewTech || biggerScreen)?
+                        <LeftSection key={'left-section'} />:
+                        <RightSection key={'right-section'} />
                     }
+                    </AnimatePresence>
 
 
                     {
-                        (screenSize=='lg'||screenSize=='xl')&&
+                        biggerScreen&&
                         <RightSection />
                     }
                     

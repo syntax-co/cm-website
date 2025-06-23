@@ -2,6 +2,7 @@ import { useStateContext } from "@/contexts/state-context"
 import { useEffect, useState } from "react"
 import { IoIosArrowBack } from "react-icons/io";
 import WipCarousel from "./wips-carousel";
+import { motion } from "framer-motion";
 
 
 
@@ -13,20 +14,18 @@ const IntroTile = () => {
 
     return(
         <div className="flex flex-col justify-center
-        glass-card rounded-lg p-8
+        glass-card rounded-lg p-8 
         ">
-            <div className="h-1/3 text-4xl
-            flex items-center px-3"
+            <div className="h-1/3 text-3xl
+            flex items-center mb-2"
             >
                 WIPs
             </div>
 
-            <div>
+            <div className="text-base">
                 Welcome to my WIPs page—my digital workshop. 
                 Here you’ll find prototypes, half-polished experiments, 
-                and fresh ideas that are still taking shape. Peek around, 
-                kick the tires, and watch these projects evolve from rough 
-                sketches into fully-fledged tools.
+                and fresh ideas that are still taking shape. Peek around
             </div>
 
             <div className="mt-auto"
@@ -88,7 +87,7 @@ const ProjectTile = ({data}) => {
                 {data&&data.name}
             </div>
 
-            <div className="w-full h-[1px] my-4 bg-primary"
+            <div className="w-full min-h-[1px] my-4 bg-primary"
             />
             
             <div className="px-2"
@@ -113,14 +112,14 @@ const ProjectTile = ({data}) => {
 
 
 const AboutWips = () => {
-    const {wips,screenSize} = useStateContext()
+    const {wips,screenSize,biggerScreen} = useStateContext()
     const [tiles,setTiles] = useState([])
     
     const creatTiles = () => {
         const holder = [];
         let max;
 
-        if (screenSize=='lg'||screenSize=='xl') {
+        if (biggerScreen) {
             max=6
         } else {
             max=4
@@ -155,8 +154,8 @@ const AboutWips = () => {
     },[screenSize])
 
     return (
-        screenSize=='lg'||screenSize=='xl'?
-        <div className="w-5/6 h-5/6 
+        biggerScreen?
+        <motion.div className="w-5/6 h-5/6 
         grid grid-rows-2 grid-cols-3
         
         rounded-lg 
@@ -178,6 +177,10 @@ const AboutWips = () => {
         lg:h-5/6
         xl:h-5/6
         "
+
+        exit={{opacity:0}}
+        animate={{opacity:1}}
+        initial={{opacity:0}}
         >
 
             {
@@ -188,7 +191,7 @@ const AboutWips = () => {
             }   
     
 
-        </div>:
+        </motion.div>:
         <WipCarousel />
     );
 }

@@ -1,4 +1,34 @@
 {
+    "qrly":
+    {
+        "title":"QRly",
+        "altTitle":"QRly",
+        "description":"./text_files/roop.txt",
+        "link":"https://github.com/syntax-co/QRly",
+        "imagepath":"/images/roop-site.png",
+        "tags":["NextJS","React","Tailwind"],
+        "construction":false
+    },
+    "tagify":
+    {
+        "title":"Tagify",
+        "altTitle":"Tagify",
+        "description":"./text_files/roop.txt",
+        "link":"https://syntax-co.github.io/tagify-demo/",
+        "imagepath":"/images/roop-site.png",
+        "tags":["NextJS","React","Tailwind"],
+        "construction":false
+    },
+    "zenify":
+    {
+        "title":"Zenify",
+        "altTitle":"ROOP",
+        "description":"./text_files/roop.txt",
+        "link":"https://syntax-co.github.io/roop/",
+        "imagepath":"/images/roop-site.png",
+        "tags":["NextJS","React","Tailwind"],
+        "construction":false
+    },
     "ROOP":
     {
         "title":"ROOP",
@@ -48,26 +78,6 @@
         "imagepath":"/images/ccc-v2-browser-view.png",
         "tags":["NextJS","React","Tailwind","Spline","MongoDB","Ethers"],
         "construction":true
-    },
-    "kepler.io":
-    {
-        "title":"Kepler.io",
-        "altTitle":"Kepler.io",
-        "description":"./text_files/kepler-io.txt",
-        "link":"https://syntax-co.github.io/kepler-website/",
-        "imagepath":"/images/kepler-browser-view.png",
-        "tags":["NextJS","React","Tailwind"],
-        "construction":false
-    },
-    "asahi":
-    {
-        "title":"Asahi",
-        "altTitle":"Asahi",
-        "description":"./text_files/asahi-redesign.txt",
-        "link":"https://syntax-co.github.io/asahi-redesign/",
-        "imagepath":"/images/asahi-home.png",
-        "tags":["NextJS","React","Tailwind","Google API"],
-        "construction":false
     }
     
 }

@@ -60,7 +60,7 @@ const SectionTile = ({label}) => {
 
 const TechTile = ({label,dex, grow=false}) => {
 
-    const {screenSize} = useStateContext()
+    const {biggerScreen} = useStateContext()
 
 
     return(
@@ -70,7 +70,7 @@ const TechTile = ({label,dex, grow=false}) => {
         "sm:text-base md:text-base lg:text-lg xl:text-lg "+
         (grow&&
             (
-                (screenSize=='sm' || screenSize=='md')?
+                !biggerScreen?
                 'col-span-2':'col-span-3'
             )
         )
@@ -103,7 +103,7 @@ const TechTile = ({label,dex, grow=false}) => {
 const TechPanel = () => {
 
     
-    const {technologies,selectedTile,screenSize,toggleViewTech} = useStateContext()
+    const {technologies,selectedTile,biggerScreen,toggleViewTech} = useStateContext()
     const [techView,setTechView] = useState([])
     const [hide,setHide] = useState(false)
 
@@ -144,7 +144,7 @@ const TechPanel = () => {
             "
             >
                 {
-                    (screenSize=='sm'||screenSize=='md')&&
+                    !biggerScreen&&
                     <div className="w-16 bg-secondary
                     flex items-center justify-center
                     rounded-md mr-auto

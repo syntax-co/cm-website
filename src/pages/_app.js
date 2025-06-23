@@ -4,9 +4,13 @@ import MobileMenu from "@/components/mobile-menu";
 import Navbar from "@/components/navbar";
 import { StateProvider } from "@/contexts/state-context";
 import "@/styles/globals.css";
+import { AnimatePresence } from "framer-motion";
+import { useRouter } from "next/router";
 
 export default function App({ Component, pageProps }) {
   
+  const router = useRouter()
+
   return (
     <StateProvider>
       <div className="relative w-full min-h-screen">
@@ -20,7 +24,11 @@ export default function App({ Component, pageProps }) {
         {/* Main content */}
         <div className="relative z-10">
           <Navbar />
-          <Component {...pageProps} />
+
+          <AnimatePresence mode="wait"
+          >
+            <Component {...pageProps} key={router.asPath} />
+          </AnimatePresence>
         </div>
       </div>
     </StateProvider>
