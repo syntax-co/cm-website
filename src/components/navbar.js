@@ -52,7 +52,7 @@ const Navbar = () => {
             cursor-pointer
             '
             style={{
-                backgroundImage:'url(./images/logo.png)'
+                backgroundImage:'url(./images/logo.ico)'
             }}
 
             onClick={()=>{router.push('/')}}

@@ -1,70 +1,78 @@
-[
-    {
+{
+    "Fortune Cookie":{
         "name": "Fortune Cookie",
-        "description": "Crack open a virtual fortune cookie and reveal a piece of wisdom, humor, or surprise. One click, one fortune \u2014 no fluff, no distractions.",
-        "technologies": [
+        "description": "/txt_files/fortune-cookie.txt",
+        "tags": [
             "Next.js",
             "React",
             "Tailwind CSS",
             "Vercel"
         ],
-        "link": "https://your-link-here.com"
+        "link": "https://syntax-co.github.io/fortune-cookie/",
+        "imagepath":"/images/fortune-cookie-ss.png"
     },
-    {
+    "Qrly":{
         "name": "Qrly",
-        "description": "A minimal web app that converts user-provided URLs into downloadable QR codes using a clean split-view layout.",
-        "technologies": [
+        "description": "/text_files/qrly.txt",
+        "tags": [
             "Next.js",
             "React",
-            "Tailwind CSS",
-            "Vercel"
+            "Tailwind CSS"
         ],
-        "link": "https://your-link-here.com"
+        "link": "https://syntax-co.github.io/QRly/",
+        "imagepath":"/images/qrly-ss.png"
     },
-    {
+    "Tagify":{
         "name": "Tagify",
-        "description": "QR code generation and analytics platform with a full-stack setup to track scan performance over time.",
-        "technologies": [
+        "description": "/text_files/wips/tagify.txt",
+        "tags": [
             "Next.js",
             "React",
             "MongoDB",
             "Tailwind CSS"
         ],
-        "link": "https://your-link-here.com"
+        "link": "https://syntax-co.github.io/tagify-demo/",
+        "imagepath":"/images/tagify-ss.png"
     },
-    {
-        "name": "Kailus",
-        "description": "Scheduling assistant that uses natural language prompts and the OpenAI API to generate structured work schedules.",
-        "technologies": [
-            "Next.js",
-            "React",
-            "MongoDB",
-            "Tailwind CSS",
-            "OpenAI API"
-        ],
-        "link": "https://your-link-here.com"
-    },
-    {
+    "ROOP":{
         "name": "ROOP",
         "description": "Redesigned and rebuilt a restaurant website with improved visual clarity, modern UI, and interactive elements.",
-        "technologies": [
+        "tags": [
             "React",
             "Tailwind CSS",
             "Framer Motion",
             "Figma",
             "GitHub Pages"
         ],
-        "link": "https://your-link-here.com"
+        "link": "https://syntax-co.github.io/roop/",
+        "imagepath":"/images/roop-site.png"
     },
-    {
+    "wgi":{
         "name": "Weird Girl Ink",
         "description": "Custom website for a local tattoo studio, inspired by their social media presence and built for creative showcase.",
-        "technologies": [
+        "tags": [
             "React",
             "Tailwind CSS",
             "Framer Motion",
             "Figma"
         ],
-        "link": "https://weirdgirlink.com"
+        "link": "https://weirdgirlink.com",
+        "imagepath":"/images/wgi-browser.png"
+    },
+    "E//A":
+    {
+        "name":"Eldtritch Automata",
+        "description":"./text_files/eldritch-automata.txt",
+        "link":"https://syntax-co.github.io/eldritch-demo/",
+        "imagepath":"/images/eldritch-website-browser.png",
+        "tags":["NextJS","React","Tailwind"]
+    },
+    "ccc":
+    {
+        "title":"Cutthroat Country Club",
+        "description":"./text_files/cutthroat-country-club.txt",
+        "link":"https://www.cutthroatcountryclub.com/",
+        "imagepath":"/images/ccc-laptop-view.png",
+        "tags":["React.js","Web-3"]
     }
-]
+}

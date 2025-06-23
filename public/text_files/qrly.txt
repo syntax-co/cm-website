@@ -1,0 +1,1 @@
+A minimal web app that converts user-provided URLs into downloadable QR codes using a clean split-view layout.

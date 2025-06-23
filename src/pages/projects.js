@@ -186,7 +186,7 @@ const Projects = () => {
                         font-display px-4
                         "
                         >
-                            {projects[selectedProject].altTitle}
+                            {projects[selectedProject].name}
                         </div>
                         
 
