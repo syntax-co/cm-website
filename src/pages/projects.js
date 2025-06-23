@@ -7,7 +7,13 @@ import { IoIosArrowBack } from "react-icons/io";
 
 const ProjectPlaque = ({label}) => {
 
-    const {selectedProject,setSelectedProject,toggleViewProject,biggerScreen} = useStateContext()
+    const {
+        selectedProject,
+        setSelectedProject,
+        toggleViewProject,
+        biggerScreen,
+
+    } = useStateContext()
 
     return(
         <motion.div className="bg-background rounded-md p-3 mx-2
@@ -33,6 +39,7 @@ const ProjectPlaque = ({label}) => {
             if(!(biggerScreen)) {
                 toggleViewProject()
             }
+
             setSelectedProject(label)}}
         >
             {label}
@@ -44,8 +51,8 @@ const ProjectPlaque = ({label}) => {
 const TagTile = ({tag}) => {
 
     return(
-        <div className="w-[45%]
-        flex justify-center my-2
+        <div className="w-fit cursor-default
+        flex justify-center my-2 px-4
         bg-light p-1 mx-[2%] h-fit
         font-primary rounded-full"
         >
@@ -129,7 +136,8 @@ const Projects = () => {
     }
 
     useEffect(() => {
-        if (selectedProject) { 
+        if (selectedProject) {
+            setDisplayDetails(false)
             getText()
         }
     }, [selectedProject]);
@@ -262,7 +270,7 @@ const Projects = () => {
                                     exit={{opacity:0}}
                                     >
                                         
-                                        <div className="flex w-5/6 h-3/4"
+                                        <div className="flex w-full h-3/4 "
                                         >
                                             <div className="text-light font-primary
                                             text-xl w-2/3 h-1/2"

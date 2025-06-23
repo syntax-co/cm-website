@@ -1,7 +1,7 @@
 {
     "Fortune Cookie":{
         "name": "Fortune Cookie",
-        "description": "/txt_files/fortune-cookie.txt",
+        "description": "/text_files/fortune-cookie.txt",
         "tags": [
             "Next.js",
             "React",
@@ -36,7 +36,7 @@
     },
     "ROOP":{
         "name": "ROOP",
-        "description": "Redesigned and rebuilt a restaurant website with improved visual clarity, modern UI, and interactive elements.",
+        "description": "/text_files/roop.txt",
         "tags": [
             "React",
             "Tailwind CSS",
@@ -49,7 +49,7 @@
     },
     "wgi":{
         "name": "Weird Girl Ink",
-        "description": "Custom website for a local tattoo studio, inspired by their social media presence and built for creative showcase.",
+        "description": "/text_files/weird-girl-ink.txt",
         "tags": [
             "React",
             "Tailwind CSS",
