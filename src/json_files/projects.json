@@ -1,83 +1,70 @@
-{
-    "qrly":
+[
     {
-        "title":"QRly",
-        "altTitle":"QRly",
-        "description":"./text_files/roop.txt",
-        "link":"https://github.com/syntax-co/QRly",
-        "imagepath":"/images/roop-site.png",
-        "tags":["NextJS","React","Tailwind"],
-        "construction":false
+        "name": "Fortune Cookie",
+        "description": "Crack open a virtual fortune cookie and reveal a piece of wisdom, humor, or surprise. One click, one fortune \u2014 no fluff, no distractions.",
+        "technologies": [
+            "Next.js",
+            "React",
+            "Tailwind CSS",
+            "Vercel"
+        ],
+        "link": "https://your-link-here.com"
     },
-    "tagify":
     {
-        "title":"Tagify",
-        "altTitle":"Tagify",
-        "description":"./text_files/roop.txt",
-        "link":"https://syntax-co.github.io/tagify-demo/",
-        "imagepath":"/images/roop-site.png",
-        "tags":["NextJS","React","Tailwind"],
-        "construction":false
+        "name": "Qrly",
+        "description": "A minimal web app that converts user-provided URLs into downloadable QR codes using a clean split-view layout.",
+        "technologies": [
+            "Next.js",
+            "React",
+            "Tailwind CSS",
+            "Vercel"
+        ],
+        "link": "https://your-link-here.com"
     },
-    "zenify":
     {
-        "title":"Zenify",
-        "altTitle":"ROOP",
-        "description":"./text_files/roop.txt",
-        "link":"https://syntax-co.github.io/roop/",
-        "imagepath":"/images/roop-site.png",
-        "tags":["NextJS","React","Tailwind"],
-        "construction":false
+        "name": "Tagify",
+        "description": "QR code generation and analytics platform with a full-stack setup to track scan performance over time.",
+        "technologies": [
+            "Next.js",
+            "React",
+            "MongoDB",
+            "Tailwind CSS"
+        ],
+        "link": "https://your-link-here.com"
     },
-    "ROOP":
     {
-        "title":"ROOP",
-        "altTitle":"ROOP",
-        "description":"./text_files/roop.txt",
-        "link":"https://syntax-co.github.io/roop/",
-        "imagepath":"/images/roop-site.png",
-        "tags":["NextJS","React","Tailwind"],
-        "construction":false
+        "name": "Kailus",
+        "description": "Scheduling assistant that uses natural language prompts and the OpenAI API to generate structured work schedules.",
+        "technologies": [
+            "Next.js",
+            "React",
+            "MongoDB",
+            "Tailwind CSS",
+            "OpenAI API"
+        ],
+        "link": "https://your-link-here.com"
     },
-    "wgi":
     {
-        "title":"Weird Girl Ink",
-        "altTitle":"WGI",
-        "description":"./text_files/weird-girl-ink.txt",
-        "link":"https://syntax-co.github.io/wgi-demo/",
-        "imagepath":"/images/wgi-browser.png",
-        "tags":["React.js","Web-3"],
-        "construction":false
+        "name": "ROOP",
+        "description": "Redesigned and rebuilt a restaurant website with improved visual clarity, modern UI, and interactive elements.",
+        "technologies": [
+            "React",
+            "Tailwind CSS",
+            "Framer Motion",
+            "Figma",
+            "GitHub Pages"
+        ],
+        "link": "https://your-link-here.com"
     },
-    "E//A":
     {
-        "title":"Eldtritch Automata",
-        "altTitle":"Eldritch Automata",
-        "description":"./text_files/eldritch-automata.txt",
-        "link":"https://syntax-co.github.io/eldritch-demo/",
-        "imagepath":"/images/eldritch-website-browser.png",
-        "tags":["NextJS","React","Tailwind"],
-        "construction":false
-    },
-    "ccc":
-    {
-        "title":"Cutthroat Country Club",
-        "altTitle":"CCC",
-        "description":"./text_files/cutthroat-country-club.txt",
-        "link":"https://www.cutthroatcountryclub.com/",
-        "imagepath":"/images/ccc-laptop-view.png",
-        "tags":["React.js","Web-3"],
-        "construction":false
-    },
-    "ccc-v2":
-    {
-        "title":"CCC v-2",
-        "altTitle":"CCC-v2",
-        "description":"./text_files/ccc-v2.txt",
-        "link":"https://syntax-co.github.io/ccc-rebuild/",
-        "imagepath":"/images/ccc-v2-browser-view.png",
-        "tags":["NextJS","React","Tailwind","Spline","MongoDB","Ethers"],
-        "construction":true
+        "name": "Weird Girl Ink",
+        "description": "Custom website for a local tattoo studio, inspired by their social media presence and built for creative showcase.",
+        "technologies": [
+            "React",
+            "Tailwind CSS",
+            "Framer Motion",
+            "Figma"
+        ],
+        "link": "https://weirdgirlink.com"
     }
-    
-}
+]
