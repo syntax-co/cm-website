@@ -1,5 +1,6 @@
 import StarfieldBackground from "@/components/misc/particle-background";
 import ParticleBackground from "@/components/misc/particle-background";
+import SupportMe from "@/components/misc/support-me";
 import MobileMenu from "@/components/mobile-menu";
 import Navbar from "@/components/navbar";
 import { StateProvider } from "@/contexts/state-context";
@@ -23,6 +24,7 @@ export default function App({ Component, pageProps }) {
 
         {/* Main content */}
         <div className="relative z-10">
+          <SupportMe />
           <Navbar />
 
           <AnimatePresence mode="wait"

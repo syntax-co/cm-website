@@ -1,4 +1,16 @@
 {
+    "Tagify":{
+        "name": "Tagify",
+        "description": "/text_files/wips/tagify.txt",
+        "tags": [
+            "Next.js",
+            "React",
+            "MongoDB",
+            "Tailwind CSS"
+        ],
+        "link": "https://tagify.space/",
+        "imagepath":"/images/tagify-ss.png"
+    },
     "Fortune Cookie":{
         "name": "Fortune Cookie",
         "description": "/text_files/fortune-cookie.txt",
@@ -21,18 +33,6 @@
         ],
         "link": "https://syntax-co.github.io/QRly/",
         "imagepath":"/images/qrly-ss.png"
-    },
-    "Tagify":{
-        "name": "Tagify",
-        "description": "/text_files/wips/tagify.txt",
-        "tags": [
-            "Next.js",
-            "React",
-            "MongoDB",
-            "Tailwind CSS"
-        ],
-        "link": "https://syntax-co.github.io/tagify-demo/",
-        "imagepath":"/images/tagify-ss.png"
     },
     "ROOP":{
         "name": "ROOP",
