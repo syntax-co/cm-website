@@ -1,4 +1,15 @@
 {
+    "Kailus":{
+        "name":"Tagify",
+        "description":"/text_files/kailus-text.txt",
+        "tags": [
+            "Next.js",
+            "React",
+            "Tailwind CSS"
+        ],
+        "link":"https://kailus-landing.vercel.app",
+        "imagepath":"/images/kailus-ss.png"
+    },
     "Tagify":{
         "name": "Tagify",
         "description": "/text_files/wips/tagify.txt",
